@@ -1,4 +1,4 @@
-import './LineItem.css';
+import './LineGood.css';
 
 export default function LineGood({ lineGood, isPaid, handleChangeQty }) {
   return (
