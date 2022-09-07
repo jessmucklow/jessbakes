@@ -22,7 +22,7 @@ export default function App() {
             <Route path='/orders/new' element={<NewOrderPage />} />
             <Route path='/orders/gallary' element={<GallaryPage />} />
             <Route path='/orders/FAQ' element={<FAQ />} />
-            <Route path='/orders/Cart' element={<Cart />} />
+            <Route path='/orders' element={<Cart />} />
           </Routes>
         </>
         :

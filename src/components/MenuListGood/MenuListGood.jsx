@@ -1,13 +1,13 @@
 import './MenuListGood.css';
 
-export default function MenuListGood({ menuGood, handleAddToOrder }) {
+export default function MenuListGood({ menuGoods, handleAddToOrder }) {
   return (
     <div className="MenuListGood">
-      <div className="emoji flex-ctr-ctr">{menuGood.emoji}</div>
-      <div className="name">{menuGood.name}</div>
+      <div className="emoji flex-ctr-ctr">{menuGoods.emoji}</div>
+      <div className="name">{menuGoods.name}</div>
       <div className="buy">
-        <span>${menuGood.price.toFixed(2)}</span>
-        <button className="btn-sm" onClick={() => handleAddToOrder(menuGood._id)}>
+        <span>${menuGoods.price.toFixed(2)}</span>
+        <button className="btn-sm" onClick={() => handleAddToOrder(menuGoods._id)}>
           ADD
         </button>
       </div>

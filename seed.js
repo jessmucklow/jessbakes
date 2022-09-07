@@ -1,7 +1,7 @@
 require('dotenv').config();
 require('./config/database');
 
-const Good = require('./models/goods');
+const Good = require('./models/good');
 
 
 // IIFE
