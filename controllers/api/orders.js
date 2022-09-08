@@ -1,5 +1,5 @@
 const Order = require('../../models/order');
-// const Item = require('../../models/item');
+// const Good = require('../../models/good');
 
 module.exports = {
   cart,
@@ -30,8 +30,8 @@ async function addToCart(req, res) {
 
 // Updates an item's qty in the cart
 async function setGoodQtyInCart(req, res) {
-  const cart = await Order.getCart(req.user._id);
-  await cart.setGoodQty(req.body.GoodId, req.body.newQty);
+    const cart = await Order.getCart(req.user._id);
+    await cart.setGoodQty(req.body.goodId, req.body.newQty);
   res.json(cart);
 }
 

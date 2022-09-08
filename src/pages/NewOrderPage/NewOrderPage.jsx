@@ -43,9 +43,9 @@ export default function NewOrderPage({ user, setUser }) {
       <MenuList
         handleAddToOrder={handleAddToOrder} menuGoods={menuGoods}
       />
-      <aside>
+      {/* <aside>
         <Link to="/orders/cart" className="button btn-sm">cart</Link>
-      </aside>
+      </aside> */}
       <OrderDetail
         order={cart}
         handleChangeQty={handleChangeQty}
