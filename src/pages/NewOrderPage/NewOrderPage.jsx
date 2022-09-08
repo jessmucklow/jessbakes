@@ -3,10 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import * as goodsAPI from '../../utilities/goods-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import './NewOrderPage.css';
-// import Logo from '../../components/Logo/Logo';
 import MenuList from '../../components/MenuList/MenuList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
-// import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
 export default function NewOrderPage({ user, setUser }) {
   const [menuGoods, setMenuGoods] = useState([]);
@@ -42,12 +40,12 @@ export default function NewOrderPage({ user, setUser }) {
 
   return (
     <main className="NewOrderPage">
-      <aside>
-        <Link to="/orders/cart" className="button btn-sm">cart</Link>
-      </aside>
       <MenuList
         handleAddToOrder={handleAddToOrder} menuGoods={menuGoods}
       />
+      <aside>
+        <Link to="/orders/cart" className="button btn-sm">cart</Link>
+      </aside>
       <OrderDetail
         order={cart}
         handleChangeQty={handleChangeQty}

@@ -6,7 +6,7 @@ import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import GallaryPage from '../GallaryPage/GallaryPage';
 import FAQ from '../FAQ/FAQ';
 import NavBar from '../../components/NavBar/NavBar';
-import Cart from '../Cart/Cart';
+import Home from '../Home/Home';
 import './App.css';
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
             <Route path='/orders/new' element={<NewOrderPage />} />
             <Route path='/orders/gallary' element={<GallaryPage />} />
             <Route path='/orders/FAQ' element={<FAQ />} />
-            <Route path='/orders' element={<Cart />} />
+            <Route path='/home' element={<Home />} />
           </Routes>
         </>
         :
