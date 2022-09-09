@@ -34,11 +34,3 @@ async function setGoodQtyInCart(req, res) {
     await cart.setGoodQty(req.body.goodId, req.body.newQty);
   res.json(cart);
 }
-
-// Update the cart's isPaid property to true
-// async function checkout(req, res) {
-//   const cart = await Order.getCart(req.user._id);
-//   cart.isPaid = true;
-//   await cart.save();
-//   res.json(cart);
-// }

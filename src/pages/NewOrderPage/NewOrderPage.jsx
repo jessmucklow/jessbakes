@@ -33,11 +33,6 @@ export default function NewOrderPage({ user, setUser }) {
     setCart(updatedCart);
   }
 
-  async function handleCheckout() {
-    await ordersAPI.checkout();
-    navigate('/orders');
-  }
-
   return (
     <main className="NewOrderPage">
       <MenuList
@@ -49,7 +44,6 @@ export default function NewOrderPage({ user, setUser }) {
       <OrderDetail
         order={cart}
         handleChangeQty={handleChangeQty}
-        handleCheckout={handleCheckout}
       />
     </main>
   );
