@@ -1,6 +1,6 @@
 import './LineGood.css';
 
-export default function LineGood({ lineGood, isPaid, handleChangeQty }) {
+export default function LineGood({ lineGood, requestOrder, handleChangeQty }) {
   return (
     <div className="LineGood">
       <div className="flex-ctr-ctr">{lineGood.good.emoji}</div>
@@ -8,15 +8,15 @@ export default function LineGood({ lineGood, isPaid, handleChangeQty }) {
         <span className="align-ctr">{lineGood.good.name}</span>
         <span>{lineGood.good.price.toFixed(2)}</span>
       </div>
-      <div className="qty" style={{ justifyContent: isPaid && 'center' }}>
-        {!isPaid &&
+      <div className="qty" style={{ justifyContent: requestOrder && 'center' }}>
+        {!requestOrder &&
           <button
             className="btn-xs"
             onClick={() => handleChangeQty(lineGood.good._id, lineGood.qty - 1)}
           >−</button>
         }
         <span>{lineGood.qty}</span>
-        {!isPaid &&
+        {!requestOrder &&
           <button
             className="btn-xs"
             onClick={() => handleChangeQty(lineGood.good._id, lineGood.qty + 1)}

@@ -12,7 +12,7 @@ export default function OrderDetail({ order, handleChangeQty }) {
   const lineGoods = order.lineGoods.map(good =>
     <LineGood
       lineGood={good}
-      isPaid={order.isPaid}
+      requestOrder={order.requestOrder}
       handleChangeQty={handleChangeQty}
       key={good._id}
     />
@@ -23,7 +23,7 @@ export default function OrderDetail({ order, handleChangeQty }) {
   return (
     <div className="OrderDetail">
       <div className="section-heading">
-        {order.isPaid ?
+        {order.requestOrder ?
           <span>ORDER <span className="smaller">{order.orderId}</span></span>
           :
           <span>NEW ORDER</span>
@@ -35,7 +35,7 @@ export default function OrderDetail({ order, handleChangeQty }) {
           <>
             {lineGoods}
             <section className="total">
-              {order.isPaid ?
+              {order.requestOrder ?
                 <span className="right">TOTAL&nbsp;&nbsp;</span>
                 :
                 <button
