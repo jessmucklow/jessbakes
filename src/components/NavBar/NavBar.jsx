@@ -21,7 +21,7 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link to='/home'>Jess Bakes</Link>
       &nbsp; | &nbsp;
-      {/* Welcome, {user.name} */}
+      Welcome, {user.name}
       &nbsp; | &nbsp;
       <Link to='' onClick={handleLogOut}>Log Out</Link>
     </nav>

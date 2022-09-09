@@ -14,7 +14,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
       key={good._id}
     />
   );
-  
+
 
   return (
     <div className="OrderDetail">
@@ -36,6 +36,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                 :
                 <button
                   className="btn-sm"
+                  type="submit"
                   onClick={handleCheckout}
                   disabled={!lineGoods.length}
                 >Request Order</button>
@@ -43,7 +44,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
               <span>{order.totalQty}</span>
               <span className="right">${order.orderTotal.toFixed(2)}</span>
             </section>
-          </>
+            <textarea name="custom" placeholder='Any add-ons or customizations go here' cols="20" rows="8"></textarea>          </>
           :
           <div className="hungry">🛒</div>
         }
