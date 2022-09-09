@@ -19,7 +19,7 @@ lineGoodSchema.virtual('extPrice').get(function() {
 const orderSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User' },
   lineGoods: [lineGoodSchema],
-  requestOrder: { type: Boolean, default: false }
+  requestedOrder: { type: Boolean, default: false }
 }, {
   timestamps: true,
   toJSON: { virtuals: true }
@@ -42,7 +42,7 @@ orderSchema.statics.getCart = function(userId) {
   // return the promise that resolves to a cart (the user's unpaid order)
   return this.findOneAndUpdate(
     // query
-    { user: userId, requestOrder: false },
+    { user: userId, requestedOrder: false },
     // update - in the case the order (cart) is upserted
     { user: userId },
     // upsert option creates the doc if it doesn't exist!

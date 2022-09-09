@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
+import RequestHistoryPage from '../RequestHistoryPage/RequestHistoryPage';
 import GallaryPage from '../GallaryPage/GallaryPage';
 import FAQ from '../FAQ/FAQ';
 import NavBar from '../../components/NavBar/NavBar';
@@ -22,6 +23,7 @@ export default function App() {
             <Route path='/orders/new' element={<NewOrderPage />} />
             <Route path='/orders/gallary' element={<GallaryPage />} />
             <Route path='/orders/FAQ' element={<FAQ />} />
+            <Route path='/orders/requests' element={< RequestHistoryPage />} />
             <Route path='/home' element={<Home />} />
           </Routes>
         </>

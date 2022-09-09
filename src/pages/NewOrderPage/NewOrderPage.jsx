@@ -33,18 +33,24 @@ export default function NewOrderPage({ user, setUser }) {
     setCart(updatedCart);
   }
 
+  async function handleCheckout() {
+    await ordersAPI.checkout();
+    navigate('/orders/requests');
+  }
+
   return (
     <main className="NewOrderPage">
       <MenuList
         handleAddToOrder={handleAddToOrder} menuGoods={menuGoods}
       />
-      {/* <aside>
-        <Link to="/orders/cart" className="button btn-sm">cart</Link>
-      </aside> */}
       <OrderDetail
         order={cart}
         handleChangeQty={handleChangeQty}
+        handleCheckout={handleCheckout}
       />
+      <aside>
+        <Link to="/orders/requests" className="button btn-sm">Past Orders</Link>
+      </aside>
     </main>
   );
 }

@@ -2,14 +2,15 @@ import './OrderDetail.css';
 import LineGood from '../LineGood/LineGood';
 
 // Used to display the details of any order, including the cart (unpaid order)
-export default function OrderDetail({ order, handleChangeQty }) {
+export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
   if (!order) return null;
 
   const lineGoods = order.lineGoods.map(good =>
     <LineGood
       lineGood={good}
-      requestOrder={order.requestOrder}
+      requestedOrder={order.requestedOrder}
       handleChangeQty={handleChangeQty}
+      handleCheckout={handleCheckout}
       key={good._id}
     />
   );
@@ -18,7 +19,7 @@ export default function OrderDetail({ order, handleChangeQty }) {
   return (
     <div className="OrderDetail">
       <div className="section-heading">
-        {order.requestOrder ?
+        {order.requestedOrder ?
           <span>ORDER <span className="smaller">{order.orderId}</span></span>
           :
           <span>NEW ORDER</span>
@@ -30,12 +31,12 @@ export default function OrderDetail({ order, handleChangeQty }) {
           <>
             {lineGoods}
             <section className="total">
-              {order.requestOrder ?
+              {order.requestedOrder ?
                 <span className="right">TOTAL&nbsp;&nbsp;</span>
                 :
                 <button
                   className="btn-sm"
-                  // onClick={}
+                  onClick={handleCheckout}
                   disabled={!lineGoods.length}
                 >Request Order</button>
               }

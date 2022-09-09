@@ -20,6 +20,7 @@ export function setGoodQtyInCart(goodId, newQty) {
   return sendRequest(`${BASE_URL}/cart/qty`, 'PUT', { goodId, newQty });
 }
 
+// Updates the order's (cart's) isPaid property to true
 export function checkout() {
   // Changing data on the server, so make it a POST request
   return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
