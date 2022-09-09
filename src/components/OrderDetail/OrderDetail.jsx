@@ -1,10 +1,6 @@
-import { useState } from "react";
 import './OrderDetail.css';
 import LineGood from '../LineGood/LineGood';
 
-import DatePicker from "react-datepicker";
-
-import "react-datepicker/dist/react-datepicker.css";
 // Used to display the details of any order, including the cart (unpaid order)
 export default function OrderDetail({ order, handleChangeQty }) {
   if (!order) return null;
@@ -18,7 +14,6 @@ export default function OrderDetail({ order, handleChangeQty }) {
     />
   );
   
-  const [startDate, setStartDate] = useState(new Date());
 
   return (
     <div className="OrderDetail">
@@ -47,7 +42,6 @@ export default function OrderDetail({ order, handleChangeQty }) {
               <span>{order.totalQty}</span>
               <span className="right">${order.orderTotal.toFixed(2)}</span>
             </section>
-            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
           </>
           :
           <div className="hungry">🛒</div>
