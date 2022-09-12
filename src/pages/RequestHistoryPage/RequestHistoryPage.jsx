@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as ordersAPI from '../../utilities/orders-api';
 import './RequestHistoryPage.css';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import OrderDetailHistory from '../../components/OrderDetailHistory/OrderDetailHistory';
 import OrderList from '../../components/OrderList/OrderList';
 
 export default function RequestHistoryPage({ user, setUser }) {
@@ -25,7 +25,7 @@ export default function RequestHistoryPage({ user, setUser }) {
         selectedOrder={selectedOrder}
         setSelectedOrder={setSelectedOrder}
       />
-      <OrderDetail order={selectedOrder} />
+      <OrderDetailHistory order={selectedOrder} />
       <aside>
         <Link to="/orders/new" className="button btn-sm">New Request</Link>
       </aside>
