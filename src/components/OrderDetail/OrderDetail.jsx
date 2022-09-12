@@ -64,8 +64,11 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                 <span>{order.totalQty}</span>
                 <span className="right">${order.orderTotal.toFixed(2)}</span>
               </section>
+              <br />
               <textarea name="order_notes" placeholder='Any add-ons or customizations go here' cols="20" rows="8"></textarea>
+              <br />
               <span>When would you like this ready by?</span>
+              <br />
               <DatePicker name="date" selected={startDate} onChange={(date) => setStartDate(date)} />
             </form>
           </>

@@ -34,6 +34,7 @@ export default function OrderDetailHistory({ order, handleChangeQty, handleCheck
                 <span>{order.totalQty}</span>
                 <span className="right">${order.orderTotal.toFixed(2)}</span>
               </section>
+              <br />
           </>
           :
           <div className="hungry">🛒</div>

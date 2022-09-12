@@ -48,9 +48,6 @@ export default function NewOrderPage({ user, setUser }) {
         handleChangeQty={handleChangeQty}
         handleCheckout={handleCheckout}
       />
-      <aside>
-        <Link to="/orders/requests" className="button btn-sm">Past Orders</Link>
-      </aside>
     </main>
   );
 }
