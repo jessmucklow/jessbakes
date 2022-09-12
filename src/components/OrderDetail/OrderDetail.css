@@ -11,7 +11,7 @@
   width: 100%
 }
 
-.OrderDetail .line-item-container {
+.OrderDetail .good-item-container {
   margin-top: 3vmin;
   justify-content: flex-start;
   height: calc(100vh - 18vmin);

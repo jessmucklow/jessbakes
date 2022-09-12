@@ -22,7 +22,7 @@ export default function OrderDetailHistory({ order, handleChangeQty, handleCheck
     <div className="OrderDetail">
       <div className="section-heading">
         {order.requestedOrder}
-          <span>NEW ORDER</span>
+        <span>ORDER <span className="smaller">{order.orderId}</span></span>
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
       <div className="line-good-container flex-ctr-ctr flex-col scroll-y">

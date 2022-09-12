@@ -11,8 +11,6 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
   const form = useRef();
   const [startDate, setStartDate] = useState(new Date());
   if (!order) return null;
-  
-  const LineGood = <LineGood lineGood={good} />
 
   const lineGoods = order.lineGoods.map(good =>
     <LineGood
@@ -35,19 +33,22 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
       });
   }
 
+  const lines = order.lineGoods.map(lg => `Good: ${lg.good.name} / Qty: ${lg.qty}\n`).join('');
+
   return (
     <div className="OrderDetail">
       <div className="section-heading">
         {order.requestedOrder}
-        <span>ORDER <span className="smaller">{order.orderId}</span></span>
+        <span>NEW ORDER</span>
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
       <div className="line-good-container flex-ctr-ctr flex-col scroll-y">
         {lineGoods.length ?
           <>
             <form ref={form} onSubmit={sendEmail}>
-              <span type="text" name="lineGoods"> {lineGoods} </span>
-              <span type="text" name="lineGoods" display="hidden"> {LineGood.good.name} </span>
+              <span>{lineGoods}</span>
+              <br />
+              <input type="hidden" name="lineGoods" style={{height: 0}} defaultValue={lines} />
 
               <section className="total">
                 {order.requestedOrder ?
