@@ -1,8 +1,13 @@
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './OrderDetail.css';
 import LineGood from '../LineGood/LineGood';
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 // Used to display the details of any order, including the cart (unpaid order)
 export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
+  const form = useRef();
+  const [startDate, setStartDate] = useState(new Date());
   if (!order) return null;
 
   const lineGoods = order.lineGoods.map(good =>
@@ -15,6 +20,16 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
     />
   );
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_81o3piv', 'template_hwi37wd', form.current, '9O3H9k-z6K9vCtHVE')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  }
 
   return (
     <div className="OrderDetail">
@@ -29,22 +44,27 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
       <div className="line-good-container flex-ctr-ctr flex-col scroll-y">
         {lineGoods.length ?
           <>
-            {lineGoods}
-            <section className="total">
-              {order.requestedOrder ?
-                <span className="right">TOTAL&nbsp;&nbsp;</span>
-                :
-                <button
-                  className="btn-sm"
-                  type="submit"
-                  onClick={handleCheckout}
-                  disabled={!lineGoods.length}
-                >Request Order</button>
-              }
-              <span>{order.totalQty}</span>
-              <span className="right">${order.orderTotal.toFixed(2)}</span>
-            </section>
-            <textarea name="custom" placeholder='Any add-ons or customizations go here' cols="20" rows="8"></textarea>          </>
+            <form ref={form} onSubmit={sendEmail}>
+              <div name="lineGoods"> {lineGoods} </div>
+              <section className="total">
+                {order.requestedOrder ?
+                  <span className="right">TOTAL&nbsp;&nbsp;</span>
+                  :
+                  <button
+                    className="btn-sm"
+                    type="submit"
+                    onClick={handleCheckout}
+                    disabled={!lineGoods.length}
+                  >Request Order</button>
+                }
+                <span>{order.totalQty}</span>
+                <span className="right">${order.orderTotal.toFixed(2)}</span>
+              </section>
+              <textarea name="order_notes" placeholder='Any add-ons or customizations go here' cols="20" rows="8"></textarea>
+              <span>When would you like this ready by?</span>
+              <DatePicker name="date" selected={startDate} onChange={(date) => setStartDate(date)} />
+            </form>
+          </>
           :
           <div className="hungry">🛒</div>
         }
