@@ -42,10 +42,10 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
         <span>NEW ORDER</span>
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
-      <div className="line-good-container flex-ctr-ctr flex-col scroll-y">
+      <div className="line-good-container flex-ctr-ctr flex-col">
         {lineGoods.length ?
           <>
-            <form ref={form} onSubmit={sendEmail}>
+            <form ref={form} onSubmit={sendEmail} classNamer="form">
               <span>{lineGoods}</span>
               <br />
               <input type="hidden" name="lineGoods" style={{height: 0}} defaultValue={lines} />
@@ -62,16 +62,18 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                   >Request Order</button>
                 }
                 <br />
-                <span>Quantity: {order.totalQty}</span>
+                <br />
+                <span>Quantity: <br /> {order.totalQty}</span>
                 <br />
                 <span className="right">Total: ${order.orderTotal.toFixed(2)}</span>
               </section>
               <br />
-              <span>When would you like this ready by?</span>
+              <span className="ready-by">When would you like this ready by?</span>
               <br />
               <DatePicker name="date" selected={startDate} onChange={(date) => setStartDate(date)} />
               <br />
-              <textarea name="order_notes" placeholder='Any add-ons or customizations go here' cols="20" rows="8"></textarea>
+              <br />
+              <textarea name="order_notes" placeholder="Any add-ons or customizations go here." cols="20" rows="8"></textarea>
             </form>
           </>
           :

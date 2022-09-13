@@ -31,8 +31,8 @@ export default function OrderDetailHistory({ order, handleChangeQty, handleCheck
              {lineGoods} 
               <section className="total">
                 {order.requestedOrder} 
-                <span>{order.totalQty}</span>
-                <span className="right">${order.orderTotal.toFixed(2)}</span>
+                <span>Quantitiy: <br/>{order.totalQty}</span>
+                <span className="right">Total: ${order.orderTotal.toFixed(2)}</span>
               </section>
               <br />
           </>

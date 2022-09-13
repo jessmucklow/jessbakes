@@ -3,6 +3,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 3vmin;
+  padding-top: 5vmin;
   font-size: 2vmin;
   color: var(--text-light);
 }
@@ -45,3 +46,4 @@
   top: 50vh;
   font-size: 2vmin;
 }
+

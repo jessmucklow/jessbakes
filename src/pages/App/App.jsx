@@ -4,8 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import RequestHistoryPage from '../RequestHistoryPage/RequestHistoryPage';
-import GallaryPage from '../GallaryPage/GallaryPage';
-import FAQ from '../FAQ/FAQ';
+import GalleryPage from '../GalleryPage/GalleryPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Home from '../Home/Home';
 import './App.css';
@@ -21,8 +20,7 @@ export default function App() {
           <Routes>
             {/* Route components in here */}
             <Route path='/orders/new' element={<NewOrderPage />} />
-            <Route path='/orders/gallary' element={<GallaryPage />} />
-            <Route path='/orders/FAQ' element={<FAQ />} />
+            <Route path='/orders/gallery' element={<GalleryPage />} />
             <Route path='/orders/requests' element={< RequestHistoryPage />} />
             <Route path='/home' element={<Home />} />
           </Routes>

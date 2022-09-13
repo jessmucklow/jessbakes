@@ -1,4 +1,4 @@
-.MenuListItem {
+.MenuListGood {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -12,27 +12,27 @@
     font-size: 4vmin;
   }
   
-  .MenuListItem .emoji {
-    height: 8vw;
-    width: 8vw;
-    font-size: 4vw;
+  .MenuListGood .emoji {
+    height: 10vw;
+    width: 10vw;
+    font-size: 5vw;
     background-color: var(--tan-1);
     border: .1vmin solid var(--tan-3);
     border-radius: 1vmin;
   }
   
-  .MenuListItem .buy {
+  .MenuListGood .buy {
     display: flex;
     flex-direction: column;
   }
   
-  .MenuListItem .buy span {
+  .MenuListGood .buy span {
     font-size: 1.7vw;
     text-align: center;
     color: var(--text-light);
   }
   
-  .MenuListItem .name {
+  .MenuListGood .name {
     font-size: 2vw;
     text-align: center;
     color: var(--text-light);
