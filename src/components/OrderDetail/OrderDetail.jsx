@@ -61,15 +61,17 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                     disabled={!lineGoods.length}
                   >Request Order</button>
                 }
-                <span>{order.totalQty}</span>
-                <span className="right">${order.orderTotal.toFixed(2)}</span>
+                <br />
+                <span>Quantity: {order.totalQty}</span>
+                <br />
+                <span className="right">Total: ${order.orderTotal.toFixed(2)}</span>
               </section>
-              <br />
-              <textarea name="order_notes" placeholder='Any add-ons or customizations go here' cols="20" rows="8"></textarea>
               <br />
               <span>When would you like this ready by?</span>
               <br />
               <DatePicker name="date" selected={startDate} onChange={(date) => setStartDate(date)} />
+              <br />
+              <textarea name="order_notes" placeholder='Any add-ons or customizations go here' cols="20" rows="8"></textarea>
             </form>
           </>
           :

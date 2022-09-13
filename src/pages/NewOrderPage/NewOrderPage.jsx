@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import * as goodsAPI from '../../utilities/goods-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import './NewOrderPage.css';
@@ -40,13 +40,13 @@ export default function NewOrderPage({ user, setUser }) {
 
   return (
     <main className="NewOrderPage">
-      <MenuList
-        handleAddToOrder={handleAddToOrder} menuGoods={menuGoods}
-      />
       <OrderDetail
         order={cart}
         handleChangeQty={handleChangeQty}
         handleCheckout={handleCheckout}
+      />
+      <MenuList
+        handleAddToOrder={handleAddToOrder} menuGoods={menuGoods}
       />
     </main>
   );
