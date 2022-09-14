@@ -10,15 +10,13 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav className='NavBar'>
-      <ul>
-      <li><Link href="#" to='/home'>Jess Bakes</Link></li>
-      <li><a href='#'>Welcome, {user.name}</a></li>
-      <li><Link href="#" to='/orders/Gallery'>Gallery</Link></li>
-      <li><Link href="#" to='/orders/new'>New Order</Link></li>
-      <li><Link href="#" to='/orders/requests'>Past Requests</Link></li>
-      <li><Link href="#" to='' onClick={handleLogOut}>🚪</Link></li>
-    </ul>
+    <nav className='navbar'>
+      <Link href="#" className="logo" to='/home'>Jess Bakes</Link>
+      <div className='welcome'>Welcome, {user.name}</div>
+      <div className='navtabs'><Link href="#" to='/orders/Gallery'>Gallery</Link></div>
+      <div className='navtabs'><Link href="#" to='/orders/new'>New Order</Link></div>
+      <div className='navtabs'><Link href="#" to='/orders/requests'>Past Requests</Link></div>
+      <div className='navtabs'><Link href="#" to='' onClick={handleLogOut}>Log Out</Link></div>
     </nav>
   );
 }

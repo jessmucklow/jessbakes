@@ -45,11 +45,11 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
       <div className="line-good-container flex-ctr-ctr flex-col">
         {lineGoods.length ?
           <>
-            <form ref={form} onSubmit={sendEmail} classNamer="form">
+
+            <form ref={form} onSubmit={sendEmail} className="form">
               <span>{lineGoods}</span>
               <br />
               <input type="hidden" name="lineGoods" style={{height: 0}} defaultValue={lines} />
-
               <section className="total">
                 {order.requestedOrder ?
                   <span className="right">TOTAL&nbsp;&nbsp;</span>
@@ -68,12 +68,12 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                 <span className="right">Total: ${order.orderTotal.toFixed(2)}</span>
               </section>
               <br />
+              <textarea name="order_notes" placeholder="Any add-ons or customizations go here." cols="20" rows="5"></textarea>
+              <br />
+              <br />
               <span className="ready-by">When would you like this ready by?</span>
               <br />
               <DatePicker name="date" selected={startDate} onChange={(date) => setStartDate(date)} />
-              <br />
-              <br />
-              <textarea name="order_notes" placeholder="Any add-ons or customizations go here." cols="20" rows="8"></textarea>
             </form>
           </>
           :

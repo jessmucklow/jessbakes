@@ -32,7 +32,7 @@ app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
-app.get('/*', function(req, res) {
+app.get('/*', function( res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 

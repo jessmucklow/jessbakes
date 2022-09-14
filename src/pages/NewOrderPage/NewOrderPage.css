@@ -5,6 +5,7 @@
     grid-template-rows: 1fr;
     background-color: var(--white);
     border-radius: 2vmin;
+    font-family: 'Noto Serif', serif;
   }
   
   .NewOrderPage aside {
@@ -12,5 +13,5 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 3vmin 2vmin;
+    margin: 5vmin;
   }

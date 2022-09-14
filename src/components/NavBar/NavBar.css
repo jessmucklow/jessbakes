@@ -1,32 +1,45 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #a52a2a;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  li {
-    float: left;
-    border-right: 3px solid #bbb;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+
+.navtabs {
+    font-size: 20px;
+    margin: 10px;
+    background-color: #d88989;
+    border-radius: 0.6vmin;
+    color: #f1eeee;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    padding-right: 1.5vmin;
+    padding-left: 1.5vmin;
     text-decoration: none;
-  }
-  
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
-    background-color: #111;
-  }
-  
-  .active {
-    background-color: #4CAF50;
-  }
+    font-family: 'Noto Serif', serif;
+}
+
+.welcome {
+    background-color: #f1eeee;
+    color: #0e702f;
+    border-radius: 0.6vmin;
+    border-color: #0e702f;
+    border-width: 3px;
+    border-style: solid;
+    text-decoration: none;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    padding-right: 1.5vmin;
+    padding-left: 1.5vmin;
+    margin: 10px;
+    font-size: 17px;
+    font-family: 'Noto Serif', serif;
+}
+
+.logo {
+    background-color: #0e702f;
+    color: #f1eeee;
+    border-radius: 0.6vmin;
+    text-decoration: none;
+    font-size: 25px;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    padding-right: 1.5vmin;
+    padding-left: 1.5vmin;
+    margin: 10px;
+    font-family: 'Niconne', cursive;
+}

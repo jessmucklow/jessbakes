@@ -1,16 +1,24 @@
 .AuthPage {
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--white);
-    border-radius: 2vmin;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center ;
+  align-items: center;
   }
   
-  .AuthPage h3 {
-    margin-top: 4vmin;
-    text-align: center;
-    color: var(--text-light);
-    cursor: pointer;
-  }
-  
+  .signin {
+  background-color: #f1eeee;
+  color: #0e702f;
+  border-radius: 0.6vmin;
+  border-color: #0e702f;
+  border-width: 3px;
+  border-style: solid;
+  text-decoration: none;
+  padding-top: 1vmin;
+  padding-bottom: 1vmin;
+  padding-right: 1.5vmin;
+  padding-left: 1.5vmin;
+  margin: 10px;
+  font-size: 17px;
+  font-family: 'Noto Serif', serif;
+}
