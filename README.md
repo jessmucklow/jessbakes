@@ -29,7 +29,7 @@ Jess Bakes is a web based platform for ordering delicious baked goods.
 
 # Getting Started 
 
-[Click to Deploy!](https://savethe-date.herokuapp.com/)
+[Click to Deploy!](https://jessbakes-jc.herokuapp.com/)
 
 [Trello Planning](https://trello.com/b/5LJQP7jD/jess-bakes)
 
