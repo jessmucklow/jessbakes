@@ -4,10 +4,37 @@
     border-radius: 2vmin;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     margin: 5vmin;
     font-family: 'Noto Serif', serif;
     padding: 3vmin;
 }
 
+.thanks {
+    color: #615954;
+    text-align: center;
+    margin: 5vmin;
+}
+
+.card-header {
+   color:#968c84;
+   background-color: #f1eeee;
+   size: 25px;
+}
+
+.card-body {
+color: #615954;
+}
+
+.card {
+    border-radius: 0.6vmin;
+    border-color: #0e702f;
+    border-width: 2px;
+    border-style: solid;
+    margin: 3vmin;
+}
+
+.img-thumbnail {
+    width: 150px;
+    height: auto;
+}

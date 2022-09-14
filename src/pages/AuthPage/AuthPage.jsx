@@ -10,6 +10,7 @@ export default function AuthPage({ setUser }) {
     <main className='AuthPage'>
       <h1 className='signin'>Welcome to Jess Bakes! <br />
         Sign up or log in to get started! </h1>
+        <br />
       { showLogin ?
           <LoginForm setUser={setUser} />
           :

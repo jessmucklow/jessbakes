@@ -6,6 +6,7 @@
     background-color: var(--white);
     border-radius: 2vmin;
     font-family: 'Noto Serif', serif;
+    margin: 5vmin;
   }
   
   .RequestHistoryPage aside {
